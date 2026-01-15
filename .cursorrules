@@ -1,0 +1,48 @@
+# Cursor Rules for Primer Project
+
+## Project Context
+Always read `PROJECT_NOTES.md` at the start of any new conversation to understand:
+- What Primer is and how it works
+- Available modules and their status
+- Design principles (composable, idempotent, declarative)
+
+## Update Rule
+After any significant changes, update `PROJECT_NOTES.md` with:
+- New modules added
+- Progress on checklist items
+- Any design decisions made
+
+## Project Type
+This is a CLI tool / project bootstrapping system for setting up new projects.
+
+## Core Principles (MUST FOLLOW)
+
+### 1. Idempotent Scripts
+Every install script must be:
+- Safe to run multiple times
+- Check state before taking action
+- Only install/update what's needed
+
+### 2. Module Structure
+Each module lives in `modules/<name>/install.sh` and follows:
+```bash
+check_<name>()   # Check current state
+install_<name>() # Idempotent install
+```
+
+### 3. Three-Phase Pattern
+All install scripts follow:
+1. Check current state → report status
+2. Install/update only what's needed
+3. Verify final state → report status
+
+### 4. Status Indicators
+Use consistent visual feedback:
+- ✓ Installed (green)
+- ↑ Partial/Outdated (yellow)
+- ✗ Not installed (red)
+
+## Developer Preferences
+- Shell: zsh (macOS default)
+- Style: Colorful, user-friendly output
+- Config: YAML for project configuration
