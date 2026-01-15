@@ -1,0 +1,50 @@
+# Example scaffold configuration
+# Copy this to scaffold.yaml and customize
+
+name: my-project
+description: Description of your project
+
+# Modules to include (order matters for dependencies)
+modules:
+  - base           # Git, Makefile, .github/ — always recommended
+  - nodejs         # Node.js project setup
+  # - godot-mono   # Godot 4 with C# support
+  # - python       # Python with venv
+  # - mobile       # iOS/Android export prep
+  # - git-hooks    # Pre-commit, branch protection
+  # - docker       # Dockerfile, docker-compose
+
+# Module-specific options
+options:
+  base:
+    gitignore: true
+    makefile: true
+    github-actions: true
+  
+  nodejs:
+    version: "20"
+    package-manager: npm  # npm, yarn, pnpm
+  
+  python:
+    version: "3.11"
+    venv: true
+  
+  godot-mono:
+    version: "4.2+"
+    language: csharp
+  
+  mobile:
+    platforms:
+      - ios
+      - android
+  
+  git-hooks:
+    protect-branch: main
+    require-pr: true
+    pre-commit:
+      - lint
+      - test
+  
+  docker:
+    compose: true
+    dockerfile: true

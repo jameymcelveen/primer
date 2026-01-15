@@ -1,0 +1,45 @@
+{
+  "name": "@primer-bootstrap/cli",
+  "version": "0.1.0",
+  "description": "A composable, idempotent project bootstrapping system",
+  "type": "module",
+  "bin": {
+    "primer": "./bin/primer.js"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node bin/primer.js",
+    "test": "node --test",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "cli",
+    "bootstrap",
+    "scaffolding",
+    "project-generator",
+    "devtools"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameymcelveen/primer.git"
+  },
+  "homepage": "https://github.com/jameymcelveen/primer#readme",
+  "bugs": {
+    "url": "https://github.com/jameymcelveen/primer/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "inquirer": "^9.2.12",
+    "ora": "^8.0.1",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
+}
