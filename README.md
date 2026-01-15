@@ -1,3 +1,3 @@
-# Primer
+# 🎨 Primer
 
-A composable, idempotent project bootstrapping system.
+A composable, idempotent project bootstrapping system. CLI coming soon.
