@@ -1,0 +1,30 @@
+name: primer-cli
+description: A composable, idempotent project bootstrapping system
+
+# Modules to include (order matters for dependencies)
+modules:
+  - base           
+  - nodejs         
+  - git-hooks      
+  - docker         # For testing purposes
+
+options:
+  base:
+    gitignore: true
+    makefile: true
+    github-actions: true
+  
+  nodejs:
+    version: "20"
+    package-manager: npm
+  
+  git-hooks:
+    protect-branch: main
+    require-pr: true
+    pre-commit:
+      - lint
+      - test
+  
+  docker:
+    compose: true
+    dockerfile: true
